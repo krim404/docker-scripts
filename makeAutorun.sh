@@ -5,7 +5,7 @@ if [ $1 ]
 		then		
 			echo "Stopping Container"
 			docker stop $1
-			echo "Setting Container $1 to run on bootup"
+			echo "Setting Container $1 to run on bootup using systemctl"
 			cp ./docker-container.service /etc/systemd/system/docker-container@$1.service
 			systemctl daemon-reload
 			echo "Starting container using systemctl"
@@ -15,5 +15,5 @@ if [ $1 ]
 			echo "Container $1 not running / found"
 		fi
 	else
-		echo "USAGE makeAutorun.sh CONTAINER"
+		echo "USAGE: ./makeAutorun.sh CONTAINER"
 fi

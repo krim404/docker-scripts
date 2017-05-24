@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SOURCE: https://github.com/moby/moby/blob/master/contrib/check-config.sh
 set -e
 
 EXITCODE=0

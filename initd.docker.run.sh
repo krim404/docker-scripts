@@ -1,5 +1,5 @@
 #!/bin/bash
-# file should be linked to /etc/init.d/dcontainer for the old unix look and feel to start/stop a script
+# file should be linked to /etc/init.d/dcontainer for the old unix look and feel to start/stop a container
 if [ $1 ] && [ $2 ]
 then
 	if [ -e /etc/systemd/system/docker-container@$1.service ]
@@ -10,5 +10,5 @@ then
 		echo "Container $1 not registered in systemd"
 	fi
 else
-	echo "USAGE: dcontainer CONTAINER start/stop/restart/statu/status"
+	echo "USAGE: /etc/init.d/dcontainer CONTAINER start/stop/restart/status"
 fi
